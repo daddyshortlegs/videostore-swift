@@ -10,6 +10,9 @@
 		A15B5091227F6F9A00E0988B /* VideoStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A15B5087227F6F9900E0988B /* VideoStore.framework */; };
 		A15B5096227F6F9A00E0988B /* VideoStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15B5095227F6F9A00E0988B /* VideoStoreTests.swift */; };
 		A15B5098227F6F9A00E0988B /* VideoStore.h in Headers */ = {isa = PBXBuildFile; fileRef = A15B508A227F6F9900E0988B /* VideoStore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A15B50A2227F715400E0988B /* Rental.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15B50A1227F715400E0988B /* Rental.swift */; };
+		A15B50A4227F71D000E0988B /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15B50A3227F71D000E0988B /* Movie.swift */; };
+		A15B50A6227F736400E0988B /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15B50A5227F736400E0988B /* Customer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +32,9 @@
 		A15B5090227F6F9A00E0988B /* VideoStoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VideoStoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A15B5095227F6F9A00E0988B /* VideoStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoStoreTests.swift; sourceTree = "<group>"; };
 		A15B5097227F6F9A00E0988B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A15B50A1227F715400E0988B /* Rental.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rental.swift; sourceTree = "<group>"; };
+		A15B50A3227F71D000E0988B /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		A15B50A5227F736400E0988B /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +79,9 @@
 			children = (
 				A15B508A227F6F9900E0988B /* VideoStore.h */,
 				A15B508B227F6F9900E0988B /* Info.plist */,
+				A15B50A1227F715400E0988B /* Rental.swift */,
+				A15B50A3227F71D000E0988B /* Movie.swift */,
+				A15B50A5227F736400E0988B /* Customer.swift */,
 			);
 			path = VideoStore;
 			sourceTree = "<group>";
@@ -148,6 +157,7 @@
 				TargetAttributes = {
 					A15B5086227F6F9900E0988B = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
 					};
 					A15B508F227F6F9A00E0988B = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -194,6 +204,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A15B50A6227F736400E0988B /* Customer.swift in Sources */,
+				A15B50A4227F71D000E0988B /* Movie.swift in Sources */,
+				A15B50A2227F715400E0988B /* Rental.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +353,7 @@
 		A15B509C227F6F9A00E0988B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -358,6 +372,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.andy.VideoStore;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -365,6 +380,7 @@
 		A15B509D227F6F9A00E0988B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -390,6 +406,7 @@
 		A15B509F227F6F9A00E0988B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = VideoStoreTests/Info.plist;
@@ -407,6 +424,7 @@
 		A15B50A0227F6F9A00E0988B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = VideoStoreTests/Info.plist;
