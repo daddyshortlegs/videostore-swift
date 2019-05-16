@@ -32,5 +32,21 @@ class VideoStoreTests: XCTestCase {
     
         XCTAssertEqual("Rental Record for Fred\n\tPlan 9 from Outer Space\t2.0\n\t8 1/2\t2.0\n\tEraserhead\t3.5\nYou owed 7.5\nYou earned 3 frequent renter points\n", customer?.statement())
     }
+  
+  func testChildrensMoviesOver3Days() {
+    let movie = Movie(title: "Spongebob", priceCode: Movie.CHILDRENS)
+    let rental = Rental(movie: movie, daysRented: 4)
+    customer?.addRental(rental:rental)
+    
+    XCTAssertEqual("Rental Record for Fred\n\tSpongebob\t3.0\nYou owed 3.0\nYou earned 1 frequent renter points\n", customer?.statement())
+  }
+  
+  func testYouGet1FrequentRentalPointForGenericFilm() {
+    let movie = Movie(title: "Spongebob", priceCode: 99)
+    let rental = Rental(movie: movie, daysRented: 4)
+    customer?.addRental(rental:rental)
+    
+    XCTAssertEqual("Rental Record for Fred\n\tSpongebob\t0.0\nYou owed 0.0\nYou earned 1 frequent renter points\n", customer?.statement())
+  }
     
 }

@@ -20,7 +20,7 @@ public class Customer {
         var index = 0
         while index < rentals.count {
             var thisAmount: Double = 0;
-            var each = rentals[index]
+            let each = rentals[index]
     
             // determines the amount for each line
             switch each.getMovie().getPriceCode() {

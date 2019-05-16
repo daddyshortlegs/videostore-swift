@@ -15,10 +15,6 @@ public class Movie {
         return priceCode;
     }
     
-    public func setPriceCode(code: Int) {
-        priceCode = code;
-    }
-    
     public func getTitle() -> String {
         return title;
     }
