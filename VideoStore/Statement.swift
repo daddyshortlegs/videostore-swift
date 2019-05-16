@@ -21,10 +21,14 @@ public class Statement {
       totalAmount += thisAmount
     }
     
-    result += "You owed \(totalAmount)\n"
-    result += "You earned \(frequentRenterPoints) frequent renter points\n"
+    result += generateFooter(owedAmount: totalAmount, earnedPoints: frequentRenterPoints)
     
     return result
   }
+  
+  func generateFooter(owedAmount: Double, earnedPoints: Int) -> String {
+    return "You owed \(owedAmount)\nYou earned \(earnedPoints) frequent renter points\n"
+  }
+  
 
 }
