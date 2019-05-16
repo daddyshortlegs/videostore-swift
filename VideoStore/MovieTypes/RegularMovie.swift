@@ -1,6 +1,6 @@
 internal class RegularMovie: Movie {
   
-  override init(title: String, priceCode: Int) {
+  init(title: String) {
     super.init(title: title, priceCode: Movie.REGULAR)
   }
 
