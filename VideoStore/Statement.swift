@@ -14,21 +14,7 @@ public class Statement {
     
     for rental in customer.rentals {
       var thisAmount: Double = 0
-      
-      switch rental.movie.priceCode {
-      case Movie.REGULAR:
-        let regularMovie = RegularMovie(title: rental.movie.title, priceCode: Movie.REGULAR)
-        thisAmount += regularMovie.calculateAmount(rental)
-      case Movie.NEW_RELEASE:
-        let newMovie = NewMovie(title: rental.movie.title, priceCode: Movie.NEW_RELEASE)
-        thisAmount += newMovie.calculateAmount(rental)
-      case Movie.CHILDRENS:
-        let childrensMovie = ChildrensMovie(title: rental.movie.title, priceCode: Movie.CHILDRENS)
-        thisAmount += childrensMovie.calculateAmount(rental)
-      default:
-        break
-      }
-      
+      thisAmount += rental.movie.calculateAmount(rental)
       frequentRenterPoints+=1
       
       if rental.movie.priceCode == Movie.NEW_RELEASE
