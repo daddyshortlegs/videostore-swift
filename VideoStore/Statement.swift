@@ -8,12 +8,12 @@ public class Statement {
   
   public func generate() -> String {
     var totalAmount: Double = 0
-    var frequentRenterPoints: Int = 0;
+    var frequentRenterPoints: Int = 0
     
-    var result = "Rental Record for " + customer.name + "\n";
+    var result = "Rental Record for \(customer.name)\n"
     
     for rental in customer.rentals {
-      var thisAmount: Double = 0;
+      var thisAmount: Double = 0
       
       switch rental.movie.priceCode {
       case Movie.REGULAR:
@@ -29,22 +29,21 @@ public class Statement {
         break
       }
       
-      frequentRenterPoints+=1;
+      frequentRenterPoints+=1
       
       if rental.movie.priceCode == Movie.NEW_RELEASE
         && rental.daysRented > 1 {
-        frequentRenterPoints+=1;
+        frequentRenterPoints+=1
       }
       
-      result += "\t" + rental.movie.title + "\t"
-        + String(thisAmount) + "\n";
-      totalAmount += thisAmount;
+      result += "\t\(rental.movie.title)\t\(thisAmount)\n"
+      totalAmount += thisAmount
     }
     
-    result += "You owed " + String(totalAmount) + "\n";
-    result += "You earned " + String(frequentRenterPoints) + " frequent renter points\n";
+    result += "You owed \(totalAmount)\n"
+    result += "You earned \(frequentRenterPoints) frequent renter points\n"
     
-    return result;
+    return result
   }
 
 }
