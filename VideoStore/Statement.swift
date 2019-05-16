@@ -29,19 +29,11 @@ public class Statement {
   }
   
   func calculateTotal() -> Double {
-    var totalAmount: Double = 0
-    for rental in customer.rentals {
-      totalAmount += rental.calculateAmount()
-    }
-    return totalAmount
+    return customer.rentals.reduce(0) { $0 + $1.calculateAmount()}
   }
   
   func calculateFrequentRenterPoints() -> Int {
-    var frequentRenterPoints: Int = 0
-    for rental in customer.rentals {
-      frequentRenterPoints += rental.calculateFrequentRenterPoints()
-    }
-    return frequentRenterPoints
+    return customer.rentals.reduce(0) { $0 + $1.calculateFrequentRenterPoints()}
   }
 
 }
