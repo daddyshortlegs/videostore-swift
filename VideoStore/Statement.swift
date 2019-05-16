@@ -14,10 +14,10 @@ public class Statement {
     
     for rental in customer.rentals {
       var thisAmount: Double = 0
-      thisAmount += rental.movie.calculateAmount(rental)
-      frequentRenterPoints += rental.movie.calculateFrequentRenterPoints(rental: rental)
+      thisAmount += rental.calculateAmount()
+      frequentRenterPoints += rental.calculateFrequentRenterPoints()
       
-      result += "\t\(rental.movie.title)\t\(thisAmount)\n"
+      result += "\t\(rental.title)\t\(thisAmount)\n"
       totalAmount += thisAmount
     }
     

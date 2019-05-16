@@ -1,13 +1,13 @@
 public class Customer {
   
     public var name: String
-    public var rentals: [Rental] = []
+    public var rentals: [Movie] = []
   
     public init(name: String) {
         self.name = name
     }
     
-    public func addRental(rental: Rental) {
+    public func addRental(rental: Movie) {
         rentals.append(rental)
     }
   
