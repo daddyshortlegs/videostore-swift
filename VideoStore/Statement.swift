@@ -14,17 +14,7 @@ public class Statement {
       result += "\t\(rental.title)\t\(rental.calculateAmount())\n"
     }
 
-    var totalAmount: Double = 0
-    for rental in customer.rentals {
-      totalAmount += rental.calculateAmount()
-    }
-
-    var frequentRenterPoints: Int = 0
-    for rental in customer.rentals {
-      frequentRenterPoints += rental.calculateFrequentRenterPoints()
-    }
-    
-    result += generateFooter(owedAmount: totalAmount, earnedPoints: frequentRenterPoints)
+    result += generateFooter()
     
     return result
   }
@@ -33,9 +23,24 @@ public class Statement {
     return "Rental Record for \(customerName)\n"
   }
   
-  func generateFooter(owedAmount: Double, earnedPoints: Int) -> String {
-    return "You owed \(owedAmount)\nYou earned \(earnedPoints) frequent renter points\n"
+  func generateFooter() -> String {
+    return "You owed \(calculateTotal())\nYou earned \(calculateFrequentRenterPoints()) frequent renter points\n"
   }
   
+  func calculateTotal() -> Double {
+    var totalAmount: Double = 0
+    for rental in customer.rentals {
+      totalAmount += rental.calculateAmount()
+    }
+    return totalAmount
+  }
+  
+  func calculateFrequentRenterPoints() -> Int {
+    var frequentRenterPoints: Int = 0
+    for rental in customer.rentals {
+      frequentRenterPoints += rental.calculateFrequentRenterPoints()
+    }
+    return frequentRenterPoints
+  }
 
 }
