@@ -7,18 +7,21 @@ public class Statement {
   }
   
   public func generate() -> String {
-    var totalAmount: Double = 0
-    var frequentRenterPoints: Int = 0
     
     var result = generateHeader(customerName: customer.name)
     
     for rental in customer.rentals {
-      var thisAmount: Double = 0
-      thisAmount += rental.calculateAmount()
+      result += "\t\(rental.title)\t\(rental.calculateAmount())\n"
+    }
+
+    var totalAmount: Double = 0
+    for rental in customer.rentals {
+      totalAmount += rental.calculateAmount()
+    }
+
+    var frequentRenterPoints: Int = 0
+    for rental in customer.rentals {
       frequentRenterPoints += rental.calculateFrequentRenterPoints()
-      
-      result += "\t\(rental.title)\t\(thisAmount)\n"
-      totalAmount += thisAmount
     }
     
     result += generateFooter(owedAmount: totalAmount, earnedPoints: frequentRenterPoints)
