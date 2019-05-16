@@ -6,6 +6,14 @@ public class Statement {
     self.customer = customer
   }
   
+  fileprivate func calculateAmount(_ rental: Rental) -> Double {
+    var rentalCost: Double = 2;
+    if (rental.daysRented > 2) {
+      rentalCost += Double(rental.daysRented - 2) * 1.5
+    }
+    return rentalCost
+  }
+  
   public func generate() -> String {
     var totalAmount: Double = 0
     var frequentRenterPoints: Int = 0;
@@ -15,21 +23,17 @@ public class Statement {
     var index = 0
     while index < customer.rentals.count {
       var thisAmount: Double = 0;
-      let each = customer.rentals[index]
+      let rental = customer.rentals[index]
       
-      // determines the amount for each line
-      switch each.movie.priceCode {
+      switch rental.movie.priceCode {
       case Movie.REGULAR:
-        thisAmount += 2;
-        if (each.daysRented > 2) {
-          thisAmount += Double(each.daysRented - 2) * 1.5
-        }
+        thisAmount += calculateAmount(rental)
       case Movie.NEW_RELEASE:
-        thisAmount += Double(each.daysRented) * 3
+        thisAmount += Double(rental.daysRented) * 3
       case Movie.CHILDRENS:
         thisAmount += 1.5
-        if (each.daysRented > 3) {
-          thisAmount += Double(each.daysRented - 3) * 1.5
+        if (rental.daysRented > 3) {
+          thisAmount += Double(rental.daysRented - 3) * 1.5
         }
       default:
         break
@@ -37,12 +41,12 @@ public class Statement {
       
       frequentRenterPoints+=1;
       
-      if each.movie.priceCode == Movie.NEW_RELEASE
-        && each.daysRented > 1 {
+      if rental.movie.priceCode == Movie.NEW_RELEASE
+        && rental.daysRented > 1 {
         frequentRenterPoints+=1;
       }
       
-      result += "\t" + each.movie.title + "\t"
+      result += "\t" + rental.movie.title + "\t"
         + String(thisAmount) + "\n";
       totalAmount += thisAmount;
       index+=1
