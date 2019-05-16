@@ -7,10 +7,9 @@ public class Statement {
   }
   
   public func generate() -> String {
-    var result = generateHeader(customerName: customer.name)
-    result += generateBody()
-    result += generateFooter()
-    return result
+    return generateHeader(customerName: customer.name) +
+      generateBody() +
+      generateFooter()
   }
   
   func generateHeader(customerName: String) -> String {
