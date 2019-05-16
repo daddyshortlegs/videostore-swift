@@ -6,14 +6,6 @@ public class Statement {
     self.customer = customer
   }
   
-  fileprivate func calculateAmount(_ rental: Rental) -> Double {
-    var rentalCost: Double = 2;
-    if (rental.daysRented > 2) {
-      rentalCost += Double(rental.daysRented - 2) * 1.5
-    }
-    return rentalCost
-  }
-  
   public func generate() -> String {
     var totalAmount: Double = 0
     var frequentRenterPoints: Int = 0;
@@ -27,7 +19,8 @@ public class Statement {
       
       switch rental.movie.priceCode {
       case Movie.REGULAR:
-        thisAmount += calculateAmount(rental)
+        let regularMovie = RegularMovie()
+        thisAmount += regularMovie.calculateAmount(rental)
       case Movie.NEW_RELEASE:
         thisAmount += Double(rental.daysRented) * 3
       case Movie.CHILDRENS:
