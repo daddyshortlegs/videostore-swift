@@ -17,11 +17,11 @@ public class Statement {
   }
   
   func generateBody() -> String {
-    var body = "";
-    for rental in customer.rentals {
-      body += "\t\(rental.title)\t\(rental.calculateAmount())\n"
-    }
-    return body
+    return customer.rentals.reduce("") { $0 + generateLine($1) }
+  }
+  
+  func generateLine(_ rental: Movie) -> String {
+    return "\t\(rental.title)\t\(rental.calculateAmount())\n"
   }
   
   func generateFooter() -> String {
