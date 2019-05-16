@@ -12,10 +12,8 @@ public class Statement {
     
     var result = "Rental Record for " + customer.name + "\n";
     
-    var index = 0
-    while index < customer.rentals.count {
+    for rental in customer.rentals {
       var thisAmount: Double = 0;
-      let rental = customer.rentals[index]
       
       switch rental.movie.priceCode {
       case Movie.REGULAR:
@@ -41,7 +39,6 @@ public class Statement {
       result += "\t" + rental.movie.title + "\t"
         + String(thisAmount) + "\n";
       totalAmount += thisAmount;
-      index+=1
     }
     
     result += "You owed " + String(totalAmount) + "\n";
