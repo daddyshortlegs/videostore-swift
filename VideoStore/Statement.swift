@@ -7,20 +7,22 @@ public class Statement {
   }
   
   public func generate() -> String {
-    
     var result = generateHeader(customerName: customer.name)
-    
-    for rental in customer.rentals {
-      result += "\t\(rental.title)\t\(rental.calculateAmount())\n"
-    }
-
+    result += generateBody()
     result += generateFooter()
-    
     return result
   }
   
   func generateHeader(customerName: String) -> String {
     return "Rental Record for \(customerName)\n"
+  }
+  
+  func generateBody() -> String {
+    var body = "";
+    for rental in customer.rentals {
+      body += "\t\(rental.title)\t\(rental.calculateAmount())\n"
+    }
+    return body
   }
   
   func generateFooter() -> String {
