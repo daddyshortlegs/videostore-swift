@@ -10,5 +10,9 @@ public class Movie {
         self.title = title;
         self.priceCode = priceCode;
     }
+  
+    internal func calculateAmount(_ rental: Rental) -> Double {
+      return 0.0
+    }
 
 }

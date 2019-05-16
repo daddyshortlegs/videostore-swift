@@ -91,9 +91,9 @@
 				A15B50A3227F71D000E0988B /* Movie.swift */,
 				6A21F23B228DA4B20089CDD9 /* RegularMovie.swift */,
 				6A21F23D228DA5450089CDD9 /* NewMovie.swift */,
+				6A21F23F228DA5A90089CDD9 /* ChildrensMovie.swift */,
 				A15B50A5227F736400E0988B /* Customer.swift */,
 				6A21F235228D9AC20089CDD9 /* Statement.swift */,
-				6A21F23F228DA5A90089CDD9 /* ChildrensMovie.swift */,
 			);
 			path = VideoStore;
 			sourceTree = "<group>";
