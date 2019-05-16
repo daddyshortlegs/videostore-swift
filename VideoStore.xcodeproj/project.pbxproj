@@ -64,6 +64,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6A21F241228DAA200089CDD9 /* MovieTypes */ = {
+			isa = PBXGroup;
+			children = (
+				A15B50A3227F71D000E0988B /* Movie.swift */,
+				6A21F23B228DA4B20089CDD9 /* RegularMovie.swift */,
+				6A21F23D228DA5450089CDD9 /* NewMovie.swift */,
+				6A21F23F228DA5A90089CDD9 /* ChildrensMovie.swift */,
+			);
+			path = MovieTypes;
+			sourceTree = "<group>";
+		};
 		A15B507D227F6F9900E0988B = {
 			isa = PBXGroup;
 			children = (
@@ -88,10 +99,7 @@
 				A15B508A227F6F9900E0988B /* VideoStore.h */,
 				A15B508B227F6F9900E0988B /* Info.plist */,
 				A15B50A1227F715400E0988B /* Rental.swift */,
-				A15B50A3227F71D000E0988B /* Movie.swift */,
-				6A21F23B228DA4B20089CDD9 /* RegularMovie.swift */,
-				6A21F23D228DA5450089CDD9 /* NewMovie.swift */,
-				6A21F23F228DA5A90089CDD9 /* ChildrensMovie.swift */,
+				6A21F241228DAA200089CDD9 /* MovieTypes */,
 				A15B50A5227F736400E0988B /* Customer.swift */,
 				6A21F235228D9AC20089CDD9 /* Statement.swift */,
 			);
