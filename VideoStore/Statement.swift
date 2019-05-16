@@ -22,12 +22,11 @@ public class Statement {
         let regularMovie = RegularMovie()
         thisAmount += regularMovie.calculateAmount(rental)
       case Movie.NEW_RELEASE:
-        thisAmount += Double(rental.daysRented) * 3
+        let newMovie = NewMovie()
+        thisAmount += newMovie.calculateAmount(rental)
       case Movie.CHILDRENS:
-        thisAmount += 1.5
-        if (rental.daysRented > 3) {
-          thisAmount += Double(rental.daysRented - 3) * 1.5
-        }
+        let childrensMovie = ChildrensMovie()
+        thisAmount += childrensMovie.calculateAmount(rental)
       default:
         break
       }
