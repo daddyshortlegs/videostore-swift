@@ -10,7 +10,7 @@ public class Statement {
     var totalAmount: Double = 0
     var frequentRenterPoints: Int = 0
     
-    var result = "Rental Record for \(customer.name)\n"
+    var result = generateHeader(customerName: customer.name)
     
     for rental in customer.rentals {
       var thisAmount: Double = 0
@@ -24,6 +24,10 @@ public class Statement {
     result += generateFooter(owedAmount: totalAmount, earnedPoints: frequentRenterPoints)
     
     return result
+  }
+  
+  func generateHeader(customerName: String) -> String {
+    return "Rental Record for \(customerName)\n"
   }
   
   func generateFooter(owedAmount: Double, earnedPoints: Int) -> String {
