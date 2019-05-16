@@ -23,7 +23,7 @@ public class Customer {
             let each = rentals[index]
     
             // determines the amount for each line
-            switch each.movie.getPriceCode() {
+            switch each.movie.priceCode {
                 case Movie.REGULAR:
                     thisAmount += 2;
                     if (each.daysRented > 2) {
@@ -42,12 +42,12 @@ public class Customer {
     
             frequentRenterPoints+=1;
     
-            if each.movie.getPriceCode() == Movie.NEW_RELEASE
+            if each.movie.priceCode == Movie.NEW_RELEASE
                 && each.daysRented > 1 {
                 frequentRenterPoints+=1;
             }
     
-            result += "\t" + each.movie.getTitle() + "\t"
+            result += "\t" + each.movie.title + "\t"
                 + String(thisAmount) + "\n";
             totalAmount += thisAmount;
             index+=1
