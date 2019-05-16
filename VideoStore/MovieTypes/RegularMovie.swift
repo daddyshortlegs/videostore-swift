@@ -1,8 +1,4 @@
 internal class RegularMovie: Movie {
-  
-  init(title: String) {
-    super.init(title: title, priceCode: Movie.REGULAR)
-  }
 
   internal override func calculateAmount(_ rental: Rental) -> Double {
     var rentalCost: Double = 2;

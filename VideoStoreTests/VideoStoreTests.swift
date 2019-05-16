@@ -47,7 +47,7 @@ class VideoStoreTests: XCTestCase {
   }
   
   func testYouGet1FrequentRentalPointForGenericFilm() {
-    let movie = Movie(title: "Spongebob", priceCode: 99)
+    let movie = Movie(title: "Spongebob")
     let rental = Rental(movie: movie, daysRented: 4)
     customer?.addRental(rental:rental)
     
