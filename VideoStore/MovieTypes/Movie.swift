@@ -14,5 +14,9 @@ public class Movie {
     internal func calculateAmount(_ rental: Rental) -> Double {
       return 0.0
     }
+  
+    func calculateFrequentRenterPoints(rental: Rental) -> Int {
+      return 1
+    }
 
 }

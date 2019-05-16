@@ -8,4 +8,13 @@ internal class NewMovie: Movie {
     return Double(rental.daysRented) * 3
   }
   
+  override func calculateFrequentRenterPoints(rental: Rental) -> Int {
+    var frequentRenterPoints = 1
+    
+    if rental.daysRented > 1 {
+      frequentRenterPoints += 1
+    }
+    return frequentRenterPoints
+  }
+  
 }

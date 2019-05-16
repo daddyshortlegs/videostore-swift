@@ -69,8 +69,8 @@
 			children = (
 				A15B50A3227F71D000E0988B /* Movie.swift */,
 				6A21F23B228DA4B20089CDD9 /* RegularMovie.swift */,
-				6A21F23D228DA5450089CDD9 /* NewMovie.swift */,
 				6A21F23F228DA5A90089CDD9 /* ChildrensMovie.swift */,
+				6A21F23D228DA5450089CDD9 /* NewMovie.swift */,
 			);
 			path = MovieTypes;
 			sourceTree = "<group>";
