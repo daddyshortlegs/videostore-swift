@@ -8,6 +8,14 @@ public class Movie {
       self.daysRented = daysRented
     }
   
+    internal func calculateAmount() -> Double {
+      var thisAmount = initialAmount()
+      if (daysRented > daysOverdue()) {
+        thisAmount += Double(daysRented - daysOverdue()) * rentalRate()
+      }
+      return thisAmount
+    }
+  
     func initialAmount() -> Double {
       return 0.0
     }
@@ -18,10 +26,6 @@ public class Movie {
   
     func rentalRate() -> Double {
       return 1.5
-    }
-  
-    internal func calculateAmount() -> Double {
-      return 0.0
     }
   
     func calculateFrequentRenterPoints() -> Int {

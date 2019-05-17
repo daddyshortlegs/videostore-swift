@@ -43,12 +43,5 @@ class VideoStoreTests: XCTestCase {
     
     XCTAssertEqual("Rental Record for Fred\n\tSpongebob\t3.0\nYou owed 3.0\nYou earned 1 frequent renter points\n", statement?.generate())
   }
-  
-  func testYouGet1FrequentRentalPointForGenericFilm() {
-    let movie = Movie(title: "Spongebob", daysRented: 4)
-    customer?.addRental(rental: movie)
-    
-    XCTAssertEqual("Rental Record for Fred\n\tSpongebob\t0.0\nYou owed 0.0\nYou earned 1 frequent renter points\n", statement?.generate())
-  }
     
 }
