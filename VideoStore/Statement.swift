@@ -7,13 +7,13 @@ public class Statement {
   }
   
   public func generate() -> String {
-    return generateHeader(customerName: customer.name) +
+    return generateHeader() +
       generateBody() +
       generateFooter()
   }
   
-  func generateHeader(customerName: String) -> String {
-    return "Rental Record for \(customerName)\n"
+  func generateHeader() -> String {
+    return "Rental Record for \(customer.name)\n"
   }
   
   func generateBody() -> String {
