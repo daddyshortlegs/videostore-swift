@@ -2,8 +2,8 @@ internal class NewMovie: Movie {
   
   internal override func calculateAmount() -> Double {
     let thisAmount = initialAmount()
-    if daysRented > 0 {
-      return Double(daysRented) * 3
+    if daysRented > daysOverdue() {
+      return Double(daysRented - daysOverdue()) * 3
     }
     return thisAmount
   }

@@ -12,6 +12,10 @@ public class Movie {
       return 0.0
     }
   
+    func daysOverdue() -> Int {
+      return 0
+    }
+  
     internal func calculateAmount() -> Double {
       return 0.0
     }

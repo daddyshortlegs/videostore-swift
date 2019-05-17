@@ -4,10 +4,14 @@ internal class ChildrensMovie: Movie {
     return 1.5
   }
   
+  override func daysOverdue() -> Int {
+    return 3
+  }
+  
   internal override func calculateAmount() -> Double {
     var thisAmount = initialAmount()
-    if (daysRented > 3) {
-      thisAmount += Double(daysRented - 3) * 1.5
+    if (daysRented > daysOverdue()) {
+      thisAmount += Double(daysRented - daysOverdue()) * 1.5
     }
     return thisAmount
   }
