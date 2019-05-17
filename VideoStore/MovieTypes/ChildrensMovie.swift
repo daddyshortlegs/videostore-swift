@@ -11,7 +11,7 @@ internal class ChildrensMovie: Movie {
   internal override func calculateAmount() -> Double {
     var thisAmount = initialAmount()
     if (daysRented > daysOverdue()) {
-      thisAmount += Double(daysRented - daysOverdue()) * 1.5
+      thisAmount += Double(daysRented - daysOverdue()) * rentalRate()
     }
     return thisAmount
   }

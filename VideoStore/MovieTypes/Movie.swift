@@ -2,7 +2,7 @@ public class Movie {
     
     public var title: String
     public var daysRented: Int
-  
+    
     public init(title: String, daysRented: Int) {
       self.title = title;
       self.daysRented = daysRented
@@ -14,6 +14,10 @@ public class Movie {
   
     func daysOverdue() -> Int {
       return 0
+    }
+  
+    func rentalRate() -> Double {
+      return 1.5
     }
   
     internal func calculateAmount() -> Double {
