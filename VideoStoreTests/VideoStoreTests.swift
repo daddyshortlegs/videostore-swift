@@ -10,7 +10,6 @@ class VideoStoreTests: XCTestCase {
     override func setUp() {
       customer = Customer(name: "Fred")
       statement = Statement(customer: customer!)
-
     }
 
     func testSingleNewReleaseStatement() {
