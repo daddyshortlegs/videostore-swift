@@ -6,7 +6,10 @@ public class Movie {
     public init(title: String, daysRented: Int) {
       self.title = title;
       self.daysRented = daysRented
-
+    }
+  
+    func initialAmount() -> Double {
+      return 0.0
     }
   
     internal func calculateAmount() -> Double {
